@@ -1,0 +1,89 @@
+p,a,h1,h2,h3,h4,h5,h6{
+    font-family: sans-serif;
+}
+
+body {
+    background-image: url(bg.png);
+    background-color: #03396c;
+    margin: 0;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100% ;
+    background-color: #005b96;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: solid #011f4b;
+}
+
+footer a {
+    text-decoration: none ;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+svg {
+    margin: 0px 30px 10px;
+}
+
+svg text {
+    color: transparent;
+}
+
+.navigation ul {
+    list-style-type: none;
+    position: fixed;
+    top: 0;
+    width: 240px;
+    background-color: #005b96;
+    margin: 0px 0px 0px 80%;
+    padding: 0px 5px;
+    align-items: center;
+    border: solid #011f4b;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.navigation li {
+    float: left;
+}
+
+.navigation a.active {
+    color: #011f4b;
+    font-weight: bold;
+}
+
+.navigation a {
+    display: block;
+    color: white;
+    padding: 4px 6px;
+}
+
+.navigation a:hover {
+    color: #00cc00;
+}
+
+.achthundert {
+    width: 800px ;
+    margin: 0px auto;
+    padding: 0px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.second_nav a {
+    text-decoration: none;
+    font-size: 30px;
+    color: black;
+}
+
+.second_nav a :hover{
+    color: white;
+}
+

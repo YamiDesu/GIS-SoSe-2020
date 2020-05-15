@@ -1,0 +1,72 @@
+.socialMedia {
+    display: grid;
+    grid-template-columns: 65% 30%;
+    column-gap: 5%;
+    margin: 20px 0px 0px 0px;
+    padding: 20px;
+    background-color: #005b96;
+    border: solid #011f4b;
+    border-radius: 15px;
+    width: 80%;
+    text-align: center;
+}
+
+.contact_me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px 20px 0px;
+    padding: 20px;
+    background-color: #005b96;
+    border: solid #011f4b;
+    border-radius: 15px;
+    width: 80%;
+}
+
+.contact_me form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contact_me input, textarea{
+    margin: 2px 0px 5px;
+}
+
+.socialMediaText h1 {
+    font-size: 50px;
+    margin: 10px 0px;
+}
+
+.socialMediaText p {
+    margin: 2px 0px;
+}
+
+.socialMediaText{
+    margin: auto;
+}
+
+.socialMedia i {
+    margin: auto;
+}
+
+.socialMedia a :hover{
+    color: white;
+}
+
+.socialMedia a {
+    text-decoration: none ;
+    color: black;
+}
+
+#extra {
+    font-size: 10px;
+    color: lightgrey;
+}
+
+#extra a {
+    text-decoration: underline;
+    color: lightgrey;
+}

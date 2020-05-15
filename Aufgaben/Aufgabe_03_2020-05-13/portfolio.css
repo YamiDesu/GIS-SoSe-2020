@@ -1,0 +1,68 @@
+.containment {
+position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+#youtube {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 99%;
+  height: 100%;
+  border: solid #011f4b;
+}
+
+h1, h3{
+  border: solid #011f4b;
+  border-radius: 30px;
+  padding: 10px;
+  background-color: #005b96;
+  color: white
+}
+
+#anchor_tag {
+  text-decoration: none;
+  color: black;
+  border: dotted #011f4b;
+  background-color: #b3cde0;
+  padding: 5px;
+}
+
+#button {
+  color: #011f4b;
+  font-weight: bold;
+  background-color: #b3cde0;
+  padding: 5px;
+  margin: 25px 0px 10px;
+}
+
+#audio {
+  display: flex;
+  flex-direction: column;
+  align-items: center ; 
+  background-color: #005b96;
+  border: solid #011f4b;
+  border-radius: 100px;
+  color: white;
+  margin: 30px 0px 30px;
+  padding: 30px;
+}
+
+#audio audio {
+  border: solid #03396c;
+  border-radius: 100px;
+  margin-top: 10px;
+}
+
+#audio p {
+  margin: 2px
+}
+
+span {
+  color: red;
+  font-weight: bolder;
+}
