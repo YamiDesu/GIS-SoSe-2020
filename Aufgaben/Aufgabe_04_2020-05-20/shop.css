@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+}
+
+header {
+    padding: 10px 0px;
+    position: relative;
+    top: 0;
+    width: 100%;
+    background-color: #006a4e;
+    color: #b8d5cd;
+    
+}
+
+header ul {
+    list-style: none;
+    padding: 0px;
+}
+
+header li {
+    display: block;
+    margin: 10px auto 0px;
+}
+
+header li a {
+    text-decoration: none;
+    color: #b8d5cd;
+}
+
+header .dropdown {
+    text-align: center;
+    font-size: 20px;
+    position: relative;
+    display: block;
+    background-color: #2e856e;
+    border-radius: 40px;
+    margin: 10px 5px 0px 5px;
+    padding: 10px 0px;
+    width: 80%;
+}
+
+header .dropdown-content {
+    display: none;
+}
+
+header .dropdown:hover .dropdown-content {
+    display: block;
+    margin-bottom: 0px;
+}
+
+header #shopping_cart {
+    text-align: center;
+    position: relative;
+    display: block;
+    background-color: #2e856e;
+    border-radius: 40px;
+    margin: 10px 5px 0px 5px;
+    padding: 10px 0px;
+    width: 60px;
+}
+
+header #shopping_cart a {
+    text-decoration: none;
+    color: #b8d5cd;
+    font-size:24px
+}
+
+header #shopping_cart a:hover {
+    color: white;
+}
+
+header .title_bar img {
+    width: 40px;
+    height: 40px;
+    margin: 5px 15px;
+}
+
+header .title_bar span {
+    font-size: 27px;
+    line-height: 50px;
+    margin: auto 0px;
+}
+
+header .title_bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #2e856e;
+    border-radius: 40px;
+    padding: 5px;
+    margin: 5px
+}
+
+header #bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+header #shopping_cart {
+    margin: 10px auto;
+    text-align: center;
+    color: #b8d5cd;
+    display: block;
+    background-color: #2e856e;
+    border-radius: 40px;
+    margin: 10px 5px 0px 5px;
+    padding: 10px 0px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 5px;
+    position: relative;
+    bottom: 0;
+    width: calc(100%-10px);
+    background-color: #272727;
+    color: white;
+}
+
+footer p {
+    margin: 0px 0px 10px;
+}
+
+/* Tablet */
+@media screen and (min-width: 600px) {
+
+}
+
+/* Desktop */
+@media screen and (min-width: 1025px) {
+
+}
