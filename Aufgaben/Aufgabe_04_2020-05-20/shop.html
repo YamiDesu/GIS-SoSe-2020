@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="screen and (max-width: 600px)" href="product-small.css">
+    <link rel="stylesheet" media="screen and (min-width: 601px)" href="product-medium.css">
+    <link rel="stylesheet" media="screen and (min-width: 1025px)" href="product-big.css">
     <link rel="stylesheet" href="shop.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,35 +16,287 @@
 <body>
     <header>
         <div class="title_bar">
-            <img src="files/grass_icon_left.png" alt="grass"/>
+            <img src="files/grass_icon_left.png" alt="grass" />
             <span>GREEEN GRASS</span>
-            <img src="files/grass_icon_right.png" alt="grass"/>
+            <img src="files/grass_icon_right.png" alt="grass" />
         </div>
         <div id="bottom">
             <div class="dropdown">
                 <span>Categories</span>
                 <ul class="dropdown-content">
-                    <li><a href="#">~ Eins ~</a></li>
-                    <li><a href="#">~ Zwei ~</a></li>
-                    <li><a href="#">~ Drei ~</a></li>
+                    <li><a href="#special">~ Special Offers ~</a></li>
+                    <li><a href="#bunt">~ Colored Grass ~</a></li>
+                    <li><a href="#grün">~ Green-Tones ~</a></li>
                 </ul>
             </div>
             <div id="shopping_cart">
                 <a href=""><i class="fas fa-shopping-cart" style='font-size:24px'></i></a>
             </div>
         </div>
-        
     </header>
-    <div>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        Hallo
+
+    <div id="übersicht">
+        <h1 id="special">Special Offers!</h1>
+        <div class="container">
+            <div class="product">
+                <h3 class="title"> Color: Rainbow </h3>
+                <div class=shopIn>
+                    <span class="price"> 3279,99 ¥ </span>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <img src="/files/grass-rainbow-square.png" alt="Product" />
+                <p class="size"> Size: 4m²</p>
+                <div class="description"> 
+                    <p> If you can't choose one color, go and catch them all!</p>
+                </div>
+            </div>
+            <div class="product">
+                <h3 class="title"> Color: White </h3>
+                <div class=shopIn>
+                    <span class="price"> 3279,99 ¥ </span>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <img src="/files/grass-white.png" alt="Product" />
+                <p class="size"> Size: 4m²</p>
+                <p class="description"> The appearance of many sparkling stars on your garden floor.</p>
+            </div>
+            <div class="product">
+                <h3 class="title"> Color: Black </h3>
+                <div class=shopIn>
+                    <span class="price"> 3279,99 ¥ </span>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <img src="/files/grass-black.png" alt="Product" />
+                <p class="size"> Size: 4m²</p>
+                <div class="description">
+                    <p> Dark as the night. Be careful not to form a black hole!</p>
+                </div>
+            </div>
+            <div class="product">
+                <h3 class="title"> Pattern: Murica </h3>
+                <div class=shopIn>
+                    <span class="price"> 3279,99 ¥ </span>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <img src="/files/grass-green-murica.png" alt="Product" />
+                <p class="size"> Size: 4m²</p>
+                <div class="description">
+                    <p> Texas, Trump, Guns & Hamburgers</p>
+                </div>
+            </div>
+            <div class="product">
+                <h3 class="title"> Pattern: Schachbrett </h3>
+                <div class=shopIn>
+                    <span class="price"> 3279,99 ¥ </span>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <img src="/files/grass-green-chess-square.png" alt="Product" />
+                <p class="size"> Size: 4m²</p>
+                <div class="description">
+                    <p> Show your intellect on your own lawn and embarrass your opponents!</p>
+                </div>
+            </div>
+        </div>
+        <h1 id="bunt">Bunte Gräser!</h1>
+        <div class="container">
+            <div class="product">
+                <h3 class="title"> Color: Green </h3>
+                <div class=shopIn>
+                    <span class="price"> 2339,99 ¥ </span>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <img src="/files/grass-green.png" alt="Product" />
+                <p class="size"> Size: 4m²</p>
+                <div class="description">
+                    <p> The standard model in our range. Ensures a natural look and pleasant freshness in your living room!</p>
+                </div>
+            </div>
+            <div class="product">
+                <h3 class="title"> Color: Desert </h3>
+                <div class=shopIn>
+                    <span class="price"> 2339,99 ¥ </span>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <img src="/files/grass-yellow.png" alt="Product" />
+                <p class="size"> Size: 4m²</p>
+                <div class="description">
+                    <p> Summer, sun and oh my god, I'm hot! Are they pyramids in my garden ?!</p>
+                </div>
+            </div>
+            <div class="product">
+                <h3 class="title"> Color: Beach </h3>
+                <div class=shopIn>
+                    <span class="price"> 2339,99 ¥ </span>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <img src="/files/grass-orange.png" alt="Product" />
+                <p class="size"> Size: 4m²</p>
+                <div class="description">
+                    <p> Summer, sun and hot feelings!</p>
+                </div>
+            </div>
+            <div class="product">
+                <h3 class="title"> Color: Hell </h3>
+                <div class=shopIn>
+                    <span class="price"> 2339,99 ¥ </span>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <img src="/files/grass-red.png" alt="Product" />
+                <p class="size"> Size: 4m²</p>
+                <div class="description">
+                    <p> Look into the abyss that could await you after your death and invite guests to it!</p>
+                </div>
+            </div>
+            <div class="product">
+                <h3 class="title"> Color: Unicorn </h3>
+                <div class=shopIn>
+                    <span class="price"> 2339,99 ¥ </span>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <img src="/files/grass-pink.png" alt="Product" />
+                <p class="size"> Size: 4m²</p>
+                <div class="description">
+                    <p> PINK FLUFFY UNICORN, DANCING ON RAINBOWS (which you can also buy in here) !!!</p>
+                </div>
+            </div>
+            <div class="product">
+                <h3 class="title"> Color: Grape </h3>
+                <div class=shopIn>
+                    <span class="price"> 2339,99 ¥ </span>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <img src="/files/grass-purple.png" alt="Product" />
+                <p class="size"> Size: 4m²</p>
+                <div class="description">
+                    <p> It looks purple. Do you have to say more?</p>
+                </div>
+            </div>
+            <div class="product">
+                <h3 class="title"> Color: Atlantic </h3>
+                <div class=shopIn>
+                    <span class="price"> 2339,99 ¥ </span>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <img src="/files/grass-blue.png" alt="Product" />
+                <p class="size"> Size: 4m²</p>
+                <div class="description">
+                    <p>Blue like the ocean. A deep look and mysterious nature.</p>
+                </div>
+            </div>
+        </div>
+        <h1 id="grün">Green-Tones!</h1>
+        <div class="container">
+            <div class="product">
+                <h3 class="title"> Green: 3B </h3>
+                <div class=shopIn>
+                    <span class="price"> 3499,99 ¥ </span>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <img src="/files/grass-green-dark-3.png" alt="Product" />
+                <p class="size"> Size: 10m²</p>
+                <div class="description">
+                    <p>Green in every way. Nothing more to know about it.</p>
+                </div>
+            </div>
+            <div class="product">
+                <h3 class="title"> Green: 2B </h3>
+                <div class=shopIn>
+                    <span class="price"> 3499,99 </span>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <img src="/files/grass-green-dark-2.png" alt="Product" />
+                <p class="size"> Size: 10m²</p>
+                <div class="description">
+                    <p>Green in every way. Nothing more to know about it.</p>
+                </div>
+            </div>
+            <div class="product">
+                <h3 class="title"> Green: B </h3>
+                <div class=shopIn>
+                    <span class="price"> 3499,99 ¥ </span>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <img src="/files/grass-green-dark-1.png" alt="Product" />
+                <p class="size"> Size: 10m²</p>
+                <div class="description">
+                    <p>Green in every way. Nothing more to know about it.</p>
+                </div>
+            </div>
+            <div class="product">
+                <h3 class="title"> Green: HB </h3>
+                <div class=shopIn>
+                    <span class="price"> 2339,99 ¥ </span>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <img src="/files/grass-green.png" alt="Product" />
+                <p class="size"> Size: 10m²</p>
+                <div class="description">
+                    <p>The standard model in our range. Ensures a natural look and pleasant freshness in your living room!</p>
+                </div>
+            </div>
+            <div class="product">
+                <h3 class="title"> Size: H </h3>
+                <div class=shopIn>
+                    <span class="price"> 3499,99 ¥ </span>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <img src="/files/grass-green-light-1.png" alt="Product" />
+                <p class="size"> Size: 10m²</p>
+                <div class="description">
+                    <p>Green in every way. Nothing more to know about it.</p>
+                </div>
+            </div>
+            <div class="product">
+                <h3 class="title"> Size: 2H </h3>
+                <div class=shopIn>
+                    <span class="price"> 3499,99 ¥ </span>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <img src="/files/grass-green-light-2.png" alt="Product" />
+                <p class="size"> Size: 10m²</p>
+                <div class="description">
+                    <p>Green in every way. Nothing more to know about it.</p>
+                </div>
+            </div>
+            <div class="product">
+                <h3 class="title"> Green: 3H </h3>
+                <div class=shopIn>
+                    <span class="price"> 3499,99 ¥ </span>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <img src="/files/grass-green-light-3.png" alt="Product" />
+                <p class="size"> Size: 10m²</p>
+                <div class="description">
+                    <p>Green in every way. Nothing more to know about it.</p>
+                </div>
+            </div>
+        </div>
     </div>
+
     <footer>
         <h1>Disclaimer</h1>
-        <p>Diese Website wird nicht monetär verwendet </p>
-        <p>Auch nicht, wenn hier vermeintlich Sachen verkauft werden!</p>
+        <p>This website is not used monetarily </p>
+        <p>Not even if things seem to be sold here!</p>
     </footer>
 </body>
+
 </html>

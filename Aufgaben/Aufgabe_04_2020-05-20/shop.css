@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: Chelsea Market;
 }
 
 header {
@@ -9,7 +10,6 @@ header {
     width: 100%;
     background-color: #006a4e;
     color: #b8d5cd;
-    
 }
 
 header ul {
@@ -57,6 +57,7 @@ header #shopping_cart {
     margin: 10px 5px 0px 5px;
     padding: 10px 0px;
     width: 60px;
+    height: 30px;
 }
 
 header #shopping_cart a {
@@ -120,14 +121,4 @@ footer {
 
 footer p {
     margin: 0px 0px 10px;
-}
-
-/* Tablet */
-@media screen and (min-width: 600px) {
-
-}
-
-/* Desktop */
-@media screen and (min-width: 1025px) {
-
 }
