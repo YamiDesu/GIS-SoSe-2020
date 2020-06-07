@@ -2,6 +2,8 @@
 // Datensammlung für Produkte
 var Aufgabe06;
 (function (Aufgabe06) {
+    let shoppingPrice = 0;
+    let shoppingCount = 0;
     let categories = [
         {
             title: "Special Offers!",
@@ -154,9 +156,9 @@ var Aufgabe06;
                 product.innerHTML = `                                                
                 <h3 class="title"> ${categories[nummer].products[index].title} </h3>                                
                 <div class=shopIn>                                                     
-                    <span class="price"> ${categories[nummer].products[index].price} ¥</span>                            
-                    <button>+</button>                                               
-                    <button>-</button>                                               
+                    <span class="price"> ${categories[nummer].products[index].price.toFixed(2).toLocaleString()} ¥</span>                            
+                    <button class="addProduct" productPrice="${categories[nummer].products[index].price}">+</button>                                               
+                    <button class="removeProduct">-</button>                                               
                 </div>
                 <img src="files/${categories[nummer].products[index].imgName}" alt="Product" />            
                 <p class="size"> Size: ${categories[nummer].products[index].size}</p>
@@ -168,24 +170,72 @@ var Aufgabe06;
             }
         }
     }
-    function myFunction() {
-        console.log("Ich wurde geklickt");
-        for (let nummer = 0; nummer < categories.length; nummer++) {
-            let heading = document.querySelector(`#${categories[nummer].id}`);
-            document.querySelector("#übersicht").removeChild(heading);
-            /*let container: HTMLDivElement = document.createElement("div");
-            container.classList.add("container");
-            (<HTMLDivElement>document.querySelector("#übersicht")).appendChild(container);
-
-            for (let index: number = 0; index < categories[nummer].products.length; index++) {
-                let product: HTMLDivElement = document.createElement("div");
-                product.classList.add("product");
-                product.innerHTML = "";
-                container.appendChild(product);
-            } */
+    function drawCategory(_catNumber) {
+        clearProducts();
+        let heading = document.createElement("h1");
+        heading.setAttribute("id", categories[_catNumber].id);
+        heading.innerHTML = `${categories[_catNumber].title}`;
+        document.querySelector("#übersicht").appendChild(heading);
+        let container = document.createElement("div");
+        container.classList.add("container");
+        document.querySelector("#übersicht").appendChild(container);
+        for (let index = 0; index < categories[_catNumber].products.length; index++) {
+            let product = document.createElement("div");
+            product.classList.add("product");
+            product.innerHTML = `                                                
+                <h3 class="title"> ${categories[_catNumber].products[index].title} </h3>                                
+                <div class=shopIn>                                                     
+                    <span class="price"> ${categories[_catNumber].products[index].price} ¥</span>                            
+                    <button class="addProduct"  productPrice="${categories[_catNumber].products[index].price}">+</button>                                               
+                    <button class="removeProduct">-</button>                                               
+                </div>
+                <img src="files/${categories[_catNumber].products[index].imgName}" alt="Product" />            
+                <p class="size"> Size: ${categories[_catNumber].products[index].size}</p>
+                <div class="description">                                            
+                    <p> ${categories[_catNumber].products[index].description}</p>
+                </div>
+            `;
+            //product.querySelector("button")!.setAttribute("productPrice", "${categories[catNumber].products[index].price}");
+            container.appendChild(product);
         }
     }
-    document.querySelector("#special_a").addEventListener("click", myFunction);
+    function clearProducts() {
+        console.log("Ich wurde geklickt");
+        for (let nummer = 0; nummer < categories.length; nummer++) {
+            let alles = document.querySelector("#übersicht");
+            alles.innerHTML = "";
+        }
+    }
+    document.querySelector("#special_a").addEventListener("click", drawSpecial);
+    document.querySelector("#bunt_a").addEventListener("click", drawBunt);
+    document.querySelector("#grün_a").addEventListener("click", drawGrün);
+    document.querySelector("#all_a").addEventListener("click", drawAll);
+    function drawSpecial() {
+        drawCategory(0);
+    }
+    function drawBunt() {
+        drawCategory(1);
+    }
+    function drawGrün() {
+        drawCategory(2);
+    }
+    function drawAll() {
+        clearProducts();
+        printProducts();
+    }
+    function money(_event) {
+        let target = _event.target;
+        let price = parseFloat(target.getAttribute("productPrice"));
+        console.log("Artikel-Preis: " + price + " ¥");
+        shoppingPrice += price;
+        console.log("Shopping-Cart-Preis: " + shoppingPrice + " ¥");
+        shoppingCount++;
+        document.querySelector("#shoppingCartNumber").innerHTML = shoppingCount.toLocaleString();
+    }
+    const buttons = document.getElementsByClassName("addProduct");
+    for (const button of buttons) {
+        button.addEventListener("click", money);
+    }
 })(Aufgabe06 || (Aufgabe06 = {}));
 // Folgender auskommentierter Code dient mir als Archiv für Gedankenansätze oder Verläufe. 
 // Wenn dies nicht gerne gesehen ist, gebt mir kurz Bescheid und ich werde es entfernen
