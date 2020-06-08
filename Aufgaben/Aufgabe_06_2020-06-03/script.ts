@@ -155,12 +155,21 @@ namespace Aufgabe06 {
         }
     ];
 
-    printProducts();
+    printProducts(100);
 
     //create Structure;
 
-    function printProducts(): void {
-        for (let nummer: number = 0; nummer < categories.length; nummer++) {
+    function printProducts(_catNumber: number): void {
+
+        clearProducts();
+
+        let catCheck: boolean = false;
+        if (_catNumber != 100)
+            catCheck = true;
+        else 
+            _catNumber = 0;
+
+        for (let nummer: number = _catNumber; nummer < categories.length; nummer++) {
 
             let heading: HTMLHeadingElement = document.createElement("h1");
             heading.setAttribute("id", categories[nummer].id);
@@ -189,43 +198,10 @@ namespace Aufgabe06 {
             `;
                 container.appendChild(product);
             }
-
+            if (catCheck)
+                break;
         }
-
-    }
-
-    function drawCategory(_catNumber: number): void {
-        clearProducts();
-
-        let heading: HTMLHeadingElement = document.createElement("h1");
-        heading.setAttribute("id", categories[_catNumber].id);
-        heading.innerHTML = `${categories[_catNumber].title}`;
-        (<HTMLDivElement>document.querySelector("#übersicht")).appendChild(heading);
-
-        let container: HTMLDivElement = document.createElement("div");
-        container.classList.add("container");
-        (<HTMLDivElement>document.querySelector("#übersicht")).appendChild(container);
-
-        for (let index: number = 0; index < categories[_catNumber].products.length; index++) {
-            let product: HTMLDivElement = document.createElement("div");
-            product.classList.add("product");
-            product.innerHTML = `                                                
-                <h3 class="title"> ${categories[_catNumber].products[index].title} </h3>                                
-                <div class=shopIn>                                                     
-                    <span class="price"> ${categories[_catNumber].products[index].price} ¥</span>                            
-                    <button class="addProduct"  productPrice="${categories[_catNumber].products[index].price}">+</button>                                               
-                    <button class="removeProduct">-</button>                                               
-                </div>
-                <img src="files/${categories[_catNumber].products[index].imgName}" alt="Product" />            
-                <p class="size"> Size: ${categories[_catNumber].products[index].size}</p>
-                <div class="description">                                            
-                    <p> ${categories[_catNumber].products[index].description}</p>
-                </div>
-            `;
-            //product.querySelector("button")!.setAttribute("productPrice", "${categories[catNumber].products[index].price}");
-            container.appendChild(product);
-        }
-
+        addShoppingFunction();
     }
 
     function clearProducts(): void {
@@ -237,22 +213,20 @@ namespace Aufgabe06 {
     }
 
     (<HTMLLIElement>document.querySelector("#special_a")).addEventListener("click", drawSpecial);
-    (<HTMLLIElement>document.querySelector("#bunt_a")).addEventListener("click", drawBunt);
-    (<HTMLLIElement>document.querySelector("#grün_a")).addEventListener("click", drawGrün);
-    (<HTMLLIElement>document.querySelector("#all_a")).addEventListener("click", drawAll);
-
     function drawSpecial(): void {
-        drawCategory(0);
+        printProducts(0);
     }
+    (<HTMLLIElement>document.querySelector("#bunt_a")).addEventListener("click", drawBunt);
     function drawBunt(): void {
-        drawCategory(1);
+        printProducts(1);
     }
+    (<HTMLLIElement>document.querySelector("#grün_a")).addEventListener("click", drawGrün);
     function drawGrün(): void {
-        drawCategory(2);
+        printProducts(2);
     }
+    (<HTMLLIElement>document.querySelector("#all_a")).addEventListener("click", drawAll);
     function drawAll(): void {
-        clearProducts();
-        printProducts();
+        printProducts(100);
     }
 
     function money(_event: Event): void {
@@ -265,9 +239,11 @@ namespace Aufgabe06 {
         (<HTMLLIElement>document.querySelector("#shoppingCartNumber")).innerHTML = shoppingCount.toLocaleString();
     }
 
-    const buttons: HTMLCollectionOf<Element> = document.getElementsByClassName("addProduct");
-    for (const button of buttons) {
-        button.addEventListener("click", money);
+    function addShoppingFunction(): void {
+        const buttons: HTMLCollectionOf<Element> = document.getElementsByClassName("addProduct");
+        for (const button of buttons) {
+            button.addEventListener("click", money);
+        }
     }
 }
 

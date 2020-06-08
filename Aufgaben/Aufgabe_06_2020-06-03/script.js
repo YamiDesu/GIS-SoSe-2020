@@ -139,10 +139,16 @@ var Aufgabe06;
             ]
         }
     ];
-    printProducts();
+    printProducts(100);
     //create Structure;
-    function printProducts() {
-        for (let nummer = 0; nummer < categories.length; nummer++) {
+    function printProducts(_catNumber) {
+        clearProducts();
+        let catCheck = false;
+        if (_catNumber != 100)
+            catCheck = true;
+        else
+            _catNumber = 0;
+        for (let nummer = _catNumber; nummer < categories.length; nummer++) {
             let heading = document.createElement("h1");
             heading.setAttribute("id", categories[nummer].id);
             heading.innerHTML = `${categories[nummer].title}`;
@@ -168,36 +174,10 @@ var Aufgabe06;
             `;
                 container.appendChild(product);
             }
+            if (catCheck)
+                break;
         }
-    }
-    function drawCategory(_catNumber) {
-        clearProducts();
-        let heading = document.createElement("h1");
-        heading.setAttribute("id", categories[_catNumber].id);
-        heading.innerHTML = `${categories[_catNumber].title}`;
-        document.querySelector("#übersicht").appendChild(heading);
-        let container = document.createElement("div");
-        container.classList.add("container");
-        document.querySelector("#übersicht").appendChild(container);
-        for (let index = 0; index < categories[_catNumber].products.length; index++) {
-            let product = document.createElement("div");
-            product.classList.add("product");
-            product.innerHTML = `                                                
-                <h3 class="title"> ${categories[_catNumber].products[index].title} </h3>                                
-                <div class=shopIn>                                                     
-                    <span class="price"> ${categories[_catNumber].products[index].price} ¥</span>                            
-                    <button class="addProduct"  productPrice="${categories[_catNumber].products[index].price}">+</button>                                               
-                    <button class="removeProduct">-</button>                                               
-                </div>
-                <img src="files/${categories[_catNumber].products[index].imgName}" alt="Product" />            
-                <p class="size"> Size: ${categories[_catNumber].products[index].size}</p>
-                <div class="description">                                            
-                    <p> ${categories[_catNumber].products[index].description}</p>
-                </div>
-            `;
-            //product.querySelector("button")!.setAttribute("productPrice", "${categories[catNumber].products[index].price}");
-            container.appendChild(product);
-        }
+        addShoppingFunction();
     }
     function clearProducts() {
         console.log("Ich wurde geklickt");
@@ -207,21 +187,20 @@ var Aufgabe06;
         }
     }
     document.querySelector("#special_a").addEventListener("click", drawSpecial);
-    document.querySelector("#bunt_a").addEventListener("click", drawBunt);
-    document.querySelector("#grün_a").addEventListener("click", drawGrün);
-    document.querySelector("#all_a").addEventListener("click", drawAll);
     function drawSpecial() {
-        drawCategory(0);
+        printProducts(0);
     }
+    document.querySelector("#bunt_a").addEventListener("click", drawBunt);
     function drawBunt() {
-        drawCategory(1);
+        printProducts(1);
     }
+    document.querySelector("#grün_a").addEventListener("click", drawGrün);
     function drawGrün() {
-        drawCategory(2);
+        printProducts(2);
     }
+    document.querySelector("#all_a").addEventListener("click", drawAll);
     function drawAll() {
-        clearProducts();
-        printProducts();
+        printProducts(100);
     }
     function money(_event) {
         let target = _event.target;
@@ -232,9 +211,11 @@ var Aufgabe06;
         shoppingCount++;
         document.querySelector("#shoppingCartNumber").innerHTML = shoppingCount.toLocaleString();
     }
-    const buttons = document.getElementsByClassName("addProduct");
-    for (const button of buttons) {
-        button.addEventListener("click", money);
+    function addShoppingFunction() {
+        const buttons = document.getElementsByClassName("addProduct");
+        for (const button of buttons) {
+            button.addEventListener("click", money);
+        }
     }
 })(Aufgabe06 || (Aufgabe06 = {}));
 // Folgender auskommentierter Code dient mir als Archiv für Gedankenansätze oder Verläufe. 
