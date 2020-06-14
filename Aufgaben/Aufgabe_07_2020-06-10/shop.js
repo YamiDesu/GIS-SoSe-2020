@@ -1,68 +1,76 @@
 "use strict";
 // Datensammlung für Produkte
-var Aufgabe06;
-(function (Aufgabe06) {
+var Aufgabe07;
+(function (Aufgabe07) {
     let shoppingPrice = 0;
-    let shoppingCount = 0;
+    let shoppingCount = localStorage.length;
+    if (localStorage.length > 0)
+        shoppingCount--;
+    document.querySelector("#shoppingCartNumber").innerHTML = shoppingCount.toLocaleString();
+    let jsonObj;
     communicate("http://127.0.0.1:5500/Aufgaben/Aufgabe_07_2020-06-10/myJSON.json");
     async function communicate(_url) {
         let response = await fetch(_url);
-        let jsonObj = await response.json();
+        jsonObj = await response.json();
         console.log("Response", response);
-        printProducts(100, jsonObj);
+        printProducts(100);
         /*console.log(jsonObj);
         console.log(jsonObj[0].products[2].price);
         console.log(jsonObj[1].products[3].title);*/
         document.querySelector("#special_a").addEventListener("click", drawSpecial);
         function drawSpecial() {
-            printProducts(0, jsonObj);
+            printProducts(0);
         }
         document.querySelector("#bunt_a").addEventListener("click", drawBunt);
         function drawBunt() {
-            printProducts(1, jsonObj);
+            printProducts(1);
         }
         document.querySelector("#grün_a").addEventListener("click", drawGrün);
         function drawGrün() {
-            printProducts(2, jsonObj);
+            printProducts(2);
         }
         document.querySelector("#all_a").addEventListener("click", drawAll);
         function drawAll() {
-            printProducts(100, jsonObj);
+            printProducts(100);
         }
     }
-    Aufgabe06.communicate = communicate;
+    Aufgabe07.communicate = communicate;
+    updateShoppingCount();
+    function updateShoppingCount() {
+        shoppingCount = localStorage.length - 1;
+    }
     //printProducts(100);
     //console.log(jsonObj[1].products[3].title);
     //create Structure;
-    function printProducts(_catNumber, _jsonObj) {
-        clearProducts(_jsonObj);
+    function printProducts(_catNumber) {
+        clearProducts();
         let catCheck = false;
         if (_catNumber != 100)
             catCheck = true;
         else
             _catNumber = 0;
-        for (let nummer = _catNumber; nummer < _jsonObj.length; nummer++) {
+        for (let nummer = _catNumber; nummer < jsonObj.length; nummer++) {
             let heading = document.createElement("h1");
-            heading.setAttribute("id", _jsonObj[nummer].id);
-            heading.innerHTML = `${_jsonObj[nummer].title}`;
+            heading.setAttribute("id", jsonObj[nummer].id);
+            heading.innerHTML = `${jsonObj[nummer].title}`;
             document.querySelector("#übersicht").appendChild(heading);
             let container = document.createElement("div");
             container.classList.add("container");
             document.querySelector("#übersicht").appendChild(container);
-            for (let index = 0; index < _jsonObj[nummer].products.length; index++) {
+            for (let index = 0; index < jsonObj[nummer].products.length; index++) {
                 let product = document.createElement("div");
                 product.classList.add("product");
                 product.innerHTML = `                                                
-                <h3 class="title"> ${_jsonObj[nummer].products[index].title} </h3>                                
+                <h3 class="title"> ${jsonObj[nummer].products[index].title} </h3>                                
                 <div class=shopIn>                                                     
-                    <span class="price"> ${_jsonObj[nummer].products[index].price.toFixed(2).toLocaleString()} ¥</span>                            
-                    <button class="addProduct" productPrice="${_jsonObj[nummer].products[index].price}">+</button>                                               
+                    <span class="price"> ${jsonObj[nummer].products[index].price.toFixed(2).toLocaleString()} ¥</span>                            
+                    <button class="addProduct" CategoryNumber="${nummer}" productIndex="${index}">+</button>                                               
                     <button class="removeProduct">-</button>                                               
                 </div>
-                <img src="files/${_jsonObj[nummer].products[index].imgName}" alt="Product" />            
-                <p class="size"> Size: ${_jsonObj[nummer].products[index].size}</p>
+                <img src="files/${jsonObj[nummer].products[index].imgName}" alt="Product" />            
+                <p class="size"> Size: ${jsonObj[nummer].products[index].size}</p>
                 <div class="description">                                            
-                    <p> ${_jsonObj[nummer].products[index].description}</p>
+                    <p> ${jsonObj[nummer].products[index].description}</p>
                 </div>
             `;
                 container.appendChild(product);
@@ -72,29 +80,41 @@ var Aufgabe06;
         }
         addShoppingFunction();
     }
-    function clearProducts(_jsonObj) {
-        console.log("Ich wurde geklickt");
-        for (let nummer = 0; nummer < _jsonObj.length; nummer++) {
+    function clearProducts() {
+        for (let nummer = 0; nummer < jsonObj.length; nummer++) {
             let alles = document.querySelector("#übersicht");
             alles.innerHTML = "";
         }
     }
     function money(_event) {
         let target = _event.target;
-        let price = parseFloat(target.getAttribute("productPrice"));
+        //let price: number = parseFloat(target.getAttribute("productPrice")!);
+        let price = jsonObj[parseInt(target.getAttribute("categoryNumber"))].products[parseInt(target.getAttribute("productIndex"))].price;
         console.log("Artikel-Preis: " + price + " ¥");
         shoppingPrice += price;
         console.log("Shopping-Cart-Preis: " + shoppingPrice + " ¥");
         shoppingCount++;
         document.querySelector("#shoppingCartNumber").innerHTML = shoppingCount.toLocaleString();
     }
+    function addLocal(_event) {
+        if (localStorage.shoppingCount) {
+            localStorage.shoppingCount = Number(localStorage.shoppingCount) + 1;
+        }
+        else {
+            localStorage.shoppingCount = 1;
+        }
+        let target = _event.target;
+        let shoppingProduct = jsonObj[parseInt(target.getAttribute("categoryNumber"))].products[parseInt(target.getAttribute("productIndex"))];
+        localStorage.setItem(`${shoppingProduct.title}`, JSON.stringify(shoppingProduct));
+    }
     function addShoppingFunction() {
         const buttons = document.getElementsByClassName("addProduct");
         for (const button of buttons) {
             button.addEventListener("click", money);
+            button.addEventListener("click", addLocal);
         }
     }
-})(Aufgabe06 || (Aufgabe06 = {}));
+})(Aufgabe07 || (Aufgabe07 = {}));
 // Folgender auskommentierter Code dient mir als Archiv für Gedankenansätze oder Verläufe. 
 // Wenn dies nicht gerne gesehen ist, gebt mir kurz Bescheid und ich werde es entfernen
 /*
@@ -137,4 +157,4 @@ let myJSON: string = JSON.stringify(categories);
 JSON.stringify(categories);
 console.log(myJSON);
 */ 
-//# sourceMappingURL=script.js.map
+//# sourceMappingURL=shop.js.map

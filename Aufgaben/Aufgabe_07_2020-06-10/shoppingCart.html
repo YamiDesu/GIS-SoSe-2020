@@ -8,7 +8,7 @@
     <link rel="stylesheet" media="screen and (min-width: 601px)" href="product-medium.css">
     <link rel="stylesheet" media="screen and (min-width: 1025px)" href="product-big.css">
     <link rel="stylesheet" href="shop.css">
-    <script src="shop.js" defer></script>
+    <script src="shoppingCart.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>green grass</title>
@@ -18,28 +18,21 @@
     <header>
         <div class="title_bar">
             <img src="files/grass_icon_left.png" alt="grass" />
-            <span>GREEEN GRASS</span>
+            <span><a href="shop.html" style="text-decoration: none;color:#b8d5cd">GREEN GRASS</a></span>
             <img src="files/grass_icon_right.png" alt="grass" />
         </div>
-        <div id="bottom">
-            <div class="dropdown">
-                <span>Categories</span>
-                <ul class="dropdown-content">
-                    <li id="special_a"><a>~ Special Offers ~</a></li>
-                    <li id="bunt_a"><a>~ Colored Grass ~</a></li>
-                    <li id="grün_a"><a>~ Green-Tones ~</a></li>
-                    <li id="all_a"><a>~ Show All ~</a></li>
-                </ul>
-            </div>
-            <div id="shopping_cart">
-                <a href="shoppingCart.html"><span id=shoppingCartNumber> </span><i class="fas fa-shopping-cart" style='font-size:24px'> </i></a>
-            </div>
         </div>
     </header>
 
     <div id="übersicht">
 
     </div>
+    <button style="text-align: center" id="removeAllItems">Remove All</button>
+    <div>
+        <span style="margin-left: 10px;"> Current Price: </span>
+        <span style="margin-left: 10px;" id="showPrice">Hello</span>
+    </div>
+    
 
     <footer>
         <h1>Disclaimer</h1>
