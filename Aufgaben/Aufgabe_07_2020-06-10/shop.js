@@ -4,11 +4,11 @@ var Aufgabe07;
 (function (Aufgabe07) {
     let shoppingPrice = 0;
     let shoppingCount = localStorage.length;
-    if (localStorage.length > 0)
+    if (localStorage.length > 1)
         shoppingCount--;
     document.querySelector("#shoppingCartNumber").innerHTML = shoppingCount.toLocaleString();
     let jsonObj;
-    communicate("http://127.0.0.1:5500/Aufgaben/Aufgabe_07_2020-06-10/myJSON.json");
+    communicate("https://yamidesu.github.io/GIS-SoSe-2020/Aufgaben/Aufgabe_07_2020-06-10/myJSON.json");
     async function communicate(_url) {
         let response = await fetch(_url);
         jsonObj = await response.json();

@@ -4,7 +4,7 @@ namespace Aufgabe07 {
 
     let shoppingPrice: number = 0;
     let shoppingCount: number = localStorage.length;
-    if ( localStorage.length > 0)
+    if ( localStorage.length > 1)
         shoppingCount --;
 
     (<HTMLLIElement>document.querySelector("#shoppingCartNumber")).innerHTML = shoppingCount.toLocaleString();
@@ -25,7 +25,7 @@ namespace Aufgabe07 {
         products: Product[];
     }
 
-    communicate("http://127.0.0.1:5500/Aufgaben/Aufgabe_07_2020-06-10/myJSON.json");
+    communicate("https://yamidesu.github.io/GIS-SoSe-2020/Aufgaben/Aufgabe_07_2020-06-10/myJSON.json");
 
     export async function communicate(_url: RequestInfo): Promise<void> {
         let response: Response = await fetch(_url);
