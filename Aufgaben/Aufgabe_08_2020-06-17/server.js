@@ -16,9 +16,9 @@ var A008Server;
         console.log("Listening");
     }
     function handleRequest(_request, _response) {
-        console.log(`${_request.url}`);
-        console.log("-------------");
-        console.log("I hear voices!");
+        console.log("https://theoneandgis.herokuapp.com" + `${_request.url}`);
+        // console.log("-------------");
+        // console.log("I hear voices!");
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         _response.write(_request.url);
