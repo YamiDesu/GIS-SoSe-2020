@@ -1,24 +1,41 @@
 
-import * as HTTp from "http";
-import * as Url from "url";
+namespace tutorial08 {
 
-export namespace tutorial08 {
+    /*console.log(formData.get("vorname"));
 
-let formData: FormData = new FormData(document.forms[0]);
+    for (let entry of formData) {
+        console.log(entry);
+        console.log("name: " + entry[0]);
+        console.log("value: " + entry[1]);
+    }*/
 
-console.log(formData.get("vorname"));
+    // Trennlinie
 
-for (let entry of formData) {
-    console.log(entry);
-    console.log("name: " + entry[0]);
-    console.log("value: " + entry[1]);
-}
+    (<HTMLButtonElement>document.querySelector("#theButton")).addEventListener("click", communicate);
 
-// Trennlinie
+    //communicate("https://theoneandgis.herokuapp.com/");
 
-let url: string = "https://WeOwnTheWorld.server/path/file";
-let query: URLSearchParams = new URLSearchParams(<any>formData);
-url += url + "?" + query.toString();
-// await fetch(url);
+    async function communicate(): Promise<void> {
+
+        // let response: Response = await fetch(_url);
+        // let jsonObj = await response.json();
+
+        let formData: FormData = new FormData(document.forms[0]);
+        let url: string = "https://theoneandgis.herokuapp.com/";
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+
+        url += "?" + query.toString();
+
+        let response: Response = await fetch(url);
+        let theAnswer: string = await response.url;
+
+
+        // await fetch(url);
+        console.log(theAnswer);
+    }
+
+    console.log("hello");
+
+
 
 }

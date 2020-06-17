@@ -6,7 +6,7 @@
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "start": "node Aufgaben/Aufgabe_08_2020-06-17/test.js"
+    "start": "node Aufgaben/Aufgabe_08_2020-06-17/server.js"
   },
   "repository": {
     "type": "git",
