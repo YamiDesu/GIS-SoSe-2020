@@ -1,0 +1,21 @@
+{
+  "name": "thetwoandonlygis",
+  "version": "1.0.0",
+  "description": "Diese Datei soll mir helfen, mit Heruko arbeiten zu können.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "node Aufgaben/Aufgabe_08_2020-06-17/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YamiDesu/GIS-SoSe-2020.git"
+  },
+  "author": "Justin Dretvic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YamiDesu/GIS-SoSe-2020/issues"
+  },
+  "homepage": "https://github.com/YamiDesu/GIS-SoSe-2020#readme"
+}

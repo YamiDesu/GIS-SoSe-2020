@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="tutorial.js" defer></script>
+    <title>Tutorial Kapitel 08</title>
+</head>
+<body>
+
+    <form action="">
+        <label for="vorname">Vorname:</label> <br>
+        <input type="text" id="vorname" name="vorname" value="Ben"> <br>
+        <label for="nachname">Nachname:</label> <br>
+        <input type="text" id="nachname" name="nachname" value="Uchiha"> <br>
+        <input type="submit" value="Submit Input">
+        <button type="submit">Submit Button</button>
+    </form>
+
+    <hr>
+
+    <form method="get" action="">
+        <button type="submit">Get</button>
+    </form>
+
+    <form method="get" action="https://gis-example.herokuapp.com/">
+        <button type="submit">Get mit URL in Action</button>
+    </form>
+
+    <hr>
+
+    <form method="post" action="">
+        <button type="submit">Post</button>
+    </form>
+        
+    <form method="post" action="https://gis-example.herokuapp.com/">
+        <button type="submit">Post mit URL in Action</button>
+    </form>
+    
+
+</body>
+</html>
+
+<style>
+    button,label,input {
+        margin: 10px;
+    }
+</style>
