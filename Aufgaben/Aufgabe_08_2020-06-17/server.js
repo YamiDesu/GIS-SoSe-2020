@@ -5,8 +5,8 @@ const Http = require("http");
 var A008Server;
 (function (A008Server) {
     console.log("Starting server"); // Ausgabe in der Server-Console
-    let port = Number(process.env.PORT); /* Deklaration der number "port" mit einem Port aus der Umgebungsvariable,
-                                                                                                        der als numerisches Objekt abgespeichert werden soll*/
+    let port = Number(process.env.PORT); // Deklaration der number "port" mit einem Port aus der Umgebungsvariable,
+    // der als numerisches Objekt abgespeichert werden soll
     if (!port) // "Wenn kein Port vergeben wurde...
         port = 8100; // ...verwende den Port 8100"
     let server = Http.createServer(); // Der Server wird aufgesetzt
