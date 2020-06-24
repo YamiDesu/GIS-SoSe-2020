@@ -19,7 +19,7 @@ export namespace ServerSide {
     }
 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {     
-        console.log("http://localhost:8100" + `${_request.url}`);   
+        console.log("https://theoneandgis.herokuapp.com" + `${_request.url}`);   
         
         let myData: url.UrlWithParsedQuery = url.parse(`${_request.url}`, true);
         let myQuery: ParsedUrlQuery = myData.query;

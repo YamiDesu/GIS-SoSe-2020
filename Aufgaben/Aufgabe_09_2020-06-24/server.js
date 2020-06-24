@@ -18,7 +18,7 @@ var ServerSide;
         console.log("Listening");
     }
     function handleRequest(_request, _response) {
-        console.log("http://localhost:8100" + `${_request.url}`);
+        console.log("https://theoneandgis.herokuapp.com" + `${_request.url}`);
         let myData = url.parse(`${_request.url}`, true);
         let myQuery = myData.query;
         let splitThis = _request.url.slice(0, 5);
