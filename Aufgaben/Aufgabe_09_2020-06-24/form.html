@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="client.js" defer></script>
+    <title>Formulare Kapitel 09</title>
+</head>
+<body>
+
+    <form method="" action="https://theoneandgis.herokuapp.com">
+        <label for="vorname">Name</label> <br>
+        <input type="text" id="vorname" name="vorname" value="Ben"> <br>
+        <label for="nachname">Geburtsjahr</label> <br>
+        <input type="text" id="nachname" name="nachname" value="Uchiha"> <br>
+        <button type="submit">Submit</button>
+        <button type="button" id="getHtml">HTML Button</button>
+        <button type="button" id="getJson">JSON Button</button>
+    </form>
+
+    <div id="htmlResponse"></div>
+
+    <hr>    
+
+</body>
+</html>
+
+<style>
+    button,label,input,div {
+        margin: 10px;
+    }
+</style>
