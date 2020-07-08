@@ -4,11 +4,13 @@
   "description": "Diese Datei soll mir helfen, mit Heruko arbeiten zu können.",
   "main": "index.js",
   "dependencies": {
-    "@types/node": "^14.0.13"
+    "@types/mongodb": "^3.5.25",
+    "@types/node": "^14.0.13",
+    "mongodb": "^3.5.9"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node Aufgaben/Aufgabe_09_2020-06-24/server.js"
+    "start": "node Aufgaben/Aufgabe_11_2020-07-08/server.js remote"
   },
   "repository": {
     "type": "git",
