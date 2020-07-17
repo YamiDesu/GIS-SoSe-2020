@@ -1,0 +1,13 @@
+=> usage
+
+/mongo 			|| call Database
+			=> /mongo/nameOfCollection
+
+/nameOfCollection 	|| choose, which Collection you're calling
+			=> /nameOfCollection/furtherCommand
+
+/findCollection 	|| return a whole collection
+/findEntry 		|| return a single entry
+
+/insertEntry 		|| insert a single entry
+/removeEntry 		|| remove a single entry

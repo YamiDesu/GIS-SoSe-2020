@@ -30,6 +30,8 @@ var ServerSide;
         _response.setHeader("content-type", "application/json");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url.includes("/mongo")) {
+            console.log(" myQueryString: ", myQueryString);
+            console.log(" <string>_request.url: ", _request.url);
             await mongoAction(_response, myQueryString, _request.url);
         }
         _response.end();

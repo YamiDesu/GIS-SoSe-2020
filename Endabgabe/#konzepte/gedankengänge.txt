@@ -1,0 +1,14 @@
+Reiter:
+• Administrator
+• Über uns
+• Kontakt
+• zu den Artikeln
+• zum Warenkorb
+
+Ideen:
+Sonder-Zusammenstellung mit einer besonderen Zutat
+
+Anmerkungen:
+• Eine Zusammenstellung sollte in einem Array gespeichert werden, damit man mehrere bestellen kann
+• für den Disclaimer könnte eine Transition als hover angewandt werden
+• Vermutlich ist ein gutes frontend notwendig, um ein anständiged Backend umzusetzen

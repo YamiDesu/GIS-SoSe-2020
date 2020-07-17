@@ -1,0 +1,82 @@
+[
+    {
+		"category-name": "Eis-Sorten",
+        "id": "eisSorten",
+        "products": [
+            {
+                "product-name": "Blaubeere",
+                "price": 0.80,
+                "imgName": "filler.jpg",
+            },
+            {
+                "product-name": "Waldmeister",
+                "price": 0.80,
+                "imgName": "filler.jpg",
+            }
+        ]
+    },
+    {
+        "category-name": "Eis-Typ",
+        "id": "eisTyp",
+        "products": [
+            {
+                "product-name": "Waffel",
+                "price": 0.20,
+                "imgName": "filler.jpg",
+            },
+            {
+                "product-name": "Becher",
+                "price": 0.20,
+                "imgName": "filler.jpg",
+            },
+            {
+                "product-name": "Eigenbedarf",
+                "price": 0.00,
+                "imgName": "filler.jpg",
+				"annotation": "Mit eigenen Bechern, Waffeln usw. müssen Sie nichts weiter dafür zahlen",
+            }
+        ]
+    },
+    {
+        "title": "Toppings",
+        "id": "toppings",
+        "products": [
+            {
+                "product-name": "Bunte Streusel",
+                "price": 0.25,
+                "imgName": "filler.jpg",
+            },
+            {
+                "product-name": "Schoko Streusel",
+                "price": 0.25,
+                "imgName": "filler.jpg",
+            },
+            {
+                "product-name": "Mini Marshmellows",
+                "price": 0.25,
+                "imgName": "filler.jpg",
+            }
+        ]
+    },
+	    {
+        "title": "Extras",
+        "id": "extras",
+        "products": [
+            {
+                "product-name": "Servietten",
+                "price": 0.00,
+                "imgName": "filler.jpg",
+            },
+            {
+                "product-name": "Extra Waffel",
+                "price": 0.10,
+                "imgName": "filler.jpg",
+            },
+            {
+                "product-name": "Eiswürfel (2 Stück)",
+                "price": 0.00,
+                "imgName": "filler.jpg",
+            }
+        ]
+    }
+]

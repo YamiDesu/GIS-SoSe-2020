@@ -10,12 +10,12 @@ namespace clientSide {
 
     (<HTMLButtonElement>document.querySelector("#abschicken")).addEventListener("click", sendData);
     function sendData(): void {
-        communicate("https://theoneandgis.herokuapp.com", "mongo", "send", "");
+        communicate("http://localhost:8100", "mongo", "send", "");
     }
 
     (<HTMLButtonElement>document.querySelector("#abfragen")).addEventListener("click", retrieveData);
     function retrieveData(): void {
-        communicate("https://theoneandgis.herokuapp.com", "mongo", "retrieve", "");
+        communicate("http://localhost:8100", "mongo", "retrieve", "");
     }
 
     function removeData(_event: Event): void {

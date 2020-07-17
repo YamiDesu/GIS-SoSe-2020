@@ -6,11 +6,11 @@ var clientSide;
 (function (clientSide) {
     document.querySelector("#abschicken").addEventListener("click", sendData);
     function sendData() {
-        communicate("https://theoneandgis.herokuapp.com", "mongo", "send", "");
+        communicate("http://localhost:8100", "mongo", "send", "");
     }
     document.querySelector("#abfragen").addEventListener("click", retrieveData);
     function retrieveData() {
-        communicate("https://theoneandgis.herokuapp.com", "mongo", "retrieve", "");
+        communicate("http://localhost:8100", "mongo", "retrieve", "");
     }
     function removeData(_event) {
         let target = _event.target;

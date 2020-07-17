@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node Aufgaben/Aufgabe_11_2020-07-08/server.js remote"
+    "start": "node Endabgabe/backend/useServer.js remote"
   },
   "repository": {
     "type": "git",

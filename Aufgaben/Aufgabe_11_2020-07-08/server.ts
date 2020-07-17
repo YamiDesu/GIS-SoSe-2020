@@ -38,6 +38,8 @@ export namespace ServerSide {
         _response.setHeader("Access-Control-Allow-Origin", "*");
 
         if ( (<string>_request.url).includes("/mongo") ) {  
+            console.log(" myQueryString: ", myQueryString);
+            console.log(" <string>_request.url: ", <string>_request.url);
             await mongoAction( _response, myQueryString , (<string>_request.url) );
         }
 
