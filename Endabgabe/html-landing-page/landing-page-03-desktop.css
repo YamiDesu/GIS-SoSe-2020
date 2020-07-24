@@ -1,0 +1,11 @@
+body {
+    font-size: 40px;
+    background-size: 100vw 100vh;
+} 
+
+.bestellbox {
+    top: 150px;
+}
+.bestellbox #box-togo:hover, #box-tostay:hover {
+    background-color: rgb(0, 102, 255);
+}

@@ -1,0 +1,92 @@
+@media screen and (min-width: 0px) {
+
+    body {
+        background-image: url(../html-shop/images/background.png);
+    }
+
+    #mainContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /*align-items: stretch;*/
+    }
+
+    div.product, form {
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        border: dotted rgb(0, 25, 136) 3px;
+        border-radius: 50px;
+        background-color: rgba(0, 102, 255, 70%);
+        color: white;
+        padding: 10px;
+        align-items: center;
+        margin: 20px 0px;
+    }
+    div.product button {
+        background-color: rgba(0,0,0,50%);
+        border: solid rgb(0, 25, 136) 2px;
+        border-radius: 20px;
+        color: white;
+    }
+    div.product span {
+        display: block;
+    }
+
+    form {
+        padding: 20px 75px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    form input {
+        margin: 0px 0px 10px 0px;
+    }
+
+    button#sendOrder {
+        margin-bottom: 30px;
+        width: 90%;
+        color: white;
+        background-color: red;
+        border: solid black 3px;
+        border-radius: 50px;
+        font-size: 20px;
+    }
+
+}
+@media screen and (min-width: 601px) {
+    body {
+        font-size: 40px;
+    }
+
+    div.product button {
+        font-size: 25px;
+    }
+
+    button#sendOrder{
+        height: 50px;
+        font-size: 40px;
+        width: 75%;
+    }
+
+    form input {
+        font-size: 20px;
+    }
+
+}
+@media screen and (min-width: 1025px) {
+    div.product button:hover {
+        background-color: red;
+    }
+    
+    button#sendOrder{
+        height: 50px;
+        font-size: 40px;
+        width: 50%;
+    }
+    button#sendOrder:hover{
+        background-color: black;
+        color: red;
+    }
+}

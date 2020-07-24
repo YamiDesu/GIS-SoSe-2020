@@ -1,0 +1,113 @@
+@media screen and (min-width: 0px) {
+
+    body {
+        background-image: url(../html-shop/images/background.png);
+    }
+
+    #tableDiv {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        font-size: 20px;
+    }
+
+    #tableDiv button {
+        background-color: transparent;
+        border: solid black 2px;
+        font-weight: bold;
+    }
+
+    table {
+        margin: 10px 0px;
+        width: 90%;
+        text-align: left;
+        border: solid black 2px;
+        padding: 0px 5%;
+        background-color: rgb(0, 102, 255);
+        color: white;
+    }
+
+    th, td {
+        width: 40%;
+    }
+
+    .removeButton {
+        margin: 10px 0px;
+        width: 90%;      
+    }
+
+    .buttonDiv {
+        margin: 10px 0px;
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .buttonDiv button {
+        width: 45%;
+    }
+
+    div#formDiv {
+        width: 90%;
+        padding: 10px 5%;
+        border: solid black 2px;
+    }
+    form#myForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px 5px;
+    }
+    form#myForm input, form#myForm label, form#myForm button {
+        margin: 2px 5%;
+    }
+    form#myForm button {
+        min-height: 30px;
+    }
+
+}
+@media screen and (min-width: 601px) {
+    .removeButton {
+        width: 70%;
+        height: 40px;
+    }
+    table {
+        width: 70%;
+    }
+    .buttonDiv {
+        margin: 10px 0px;
+        width: 70%;
+    }
+    .buttonDiv button {
+        height: 40px;
+        width: 45%;
+    }
+}
+@media screen and (min-width: 1025px) {
+    .removeButton {
+        width: 40%;
+    }
+    table {
+        width: 40%;
+    }
+    .buttonDiv {
+        width: 40%;
+    }
+    .buttonDiv button {
+        width: 45%;
+    }
+    #tableDiv .removeOne:hover, #tableDiv .removeButton:hover {
+        background-color: red;
+    }
+    #tableDiv .editOne:hover {
+        background-color: yellow;
+    }
+    div#formDiv {
+        width: 60%;
+    }
+    form#myForm button:hover {
+        background-color: green;
+    }
+}
+

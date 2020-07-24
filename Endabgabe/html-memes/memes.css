@@ -1,0 +1,61 @@
+@media screen and (min-width: 0px) {
+    .top-nav {
+        color: white;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: space-around;
+        text-align: center;
+        height: 10vh;
+        padding: 5px 0px;
+    }
+    .top-nav a {
+        font-size: 0px;
+    }
+
+    #imageBox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 10px;
+    }
+    #imageBox div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 10px;
+        width: 100%;
+    }
+    #imageBox img {
+        width: 100%;
+        border: solid black 3px;
+        border-radius: 20px;
+    }
+    #buttonRight, #buttonLeft {
+        height: 5vh;
+        width: 100%;
+        text-align: center;
+        background-color: rgba(0,0,0,75%);
+        font-weight: bold;
+        font-size: 1em;
+        color: white;
+        border: solid black 3px;
+        border-radius: 50px;
+    }
+}
+@media screen and (min-width: 601px) {
+
+}
+@media screen and (min-width: 1025px) {
+    #imageBox div {
+        width: 50%;
+    }
+    #imageBox img {
+        width: 50%;
+        max-height: 650px;
+    }
+}

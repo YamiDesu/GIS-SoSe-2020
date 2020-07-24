@@ -1,0 +1,17 @@
+body {
+    font-size: 40px;
+}
+
+.bestellbox {
+    font-size: 50px;
+    margin: 0px 20px;
+    border-radius: 20px;
+}
+.bestellbox span {
+    margin: 10px 0px;
+}
+.bestellbox #box-togo, #box-tostay {
+    width: 90%;
+    margin: 20px 0px;
+    border-radius: 20px;
+}

@@ -3,43 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" media="screen and (min-width: 0px)" href="html-index/main-page-01-phone.css">
-    <link rel="stylesheet" media="screen and (min-width: 601px)" href="html-index/main-page-02-tablet.css">
-    <link rel="stylesheet" media="screen and (min-width: 1025px)" href="html-index/main-page-03-desktop.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" media="screen and (min-width: 0px)" href="html-landing-page/landing-page-01-phone.css">
+    <link rel="stylesheet" media="screen and (min-width: 601px)" href="html-landing-page/landing-page-02-tablet.css">
+    <link rel="stylesheet" media="screen and (min-width: 1025px)" href="html-landing-page/landing-page-03-desktop.css">
+    <link rel="stylesheet" href="index.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin="anonymous" SameSite="Secure"></script>
+    <script src="script-frontend/index.js" defer></script>
     <title>Eisdile Olé</title>
 </head>
 <body>
     <header>
         <div class="top-nav">
             <div id="logo">
-                <a href="#"><img src="html-index/images/nice-ice-logo.png" alt=""></a>
+                <a href="#"><img src="html-landing-page/images/nice-ice-logo.png" alt=""></a>
             </div>
             <div id="warenkorb">
-                <a href="#"><i class='fas fa-shopping-cart'></i>&nbsp;<span>0</span></a>
+                <a href="html-warenkorb\warenkorb.html"><i class='fas fa-shopping-cart'></i>&nbsp;<span>0</span></a>
             </div>
         </div>
     </header>
     <nav>
         <div class="bottom-nav"> 
             <ul>
-                <li><a href="#">Administrator</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Kontakt</a></li>
+                <a href="html-admin/admin.html"><li>Administrator</li></a>
+                <a href="html-memes/memes.html"><li>Über uns</li></a>
             </ul>
         </div>
     </nav>
     <main>
         <div class="bestellbox">
-            <span> Was darf's sein? </span> 
-            <a id="box-togo" href="html-shop/shop.html">Ice to go</a>
-            <a id="box-tostay" href="#">Gemütlich zum Tisch</a>
+            <span> Eis gefällig? </span> 
+            <a id="box-togo" href="html-shop/shop.html">Na klar!</a>
+            <!--<a id="box-tostay" href="#">Gemütlich zum Tisch</a>-->
         </div>
     </main>
-    <footer>
-        <div>
-            <!--Disclaimer-->
-        </div>
-    </footer>
 </body>
 </html>

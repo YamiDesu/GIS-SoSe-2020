@@ -1,36 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="stylesheet" href="../index.css">
-    <link rel="stylesheet" media="screen and (min-width: 0px)" href="../html-index/main-page-01-phone.css">
-    <link rel="stylesheet" media="screen and (min-width: 601px)" href="../html-index/main-page-02-tablet.css">
-    <link rel="stylesheet" media="screen and (min-width: 1025px)" href="../html-index/main-page-03-desktop.css"> -->
-    <script src="createShop.js" defer></script>
-    <script src="handleShop.js" defer></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="shop.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin="anonymous" SameSite="Secure"></script>
+    <script src="../script-frontend/shop.js" defer></script>
+    <title>Shop</title>
 </head>
 <body>
     <header>
         <div class="top-nav">
             <div id="logo">
-                <a href="../index.html"><img src="../html-index/images/nice-ice-logo.png" alt=""></a>
+                <a href="../index.html"><img src="../html-landing-page/images/nice-ice-logo.png" alt=""></a>
             </div>
             <div id="warenkorb">
-                <a href="#"><i class='fas fa-shopping-cart'></i>&nbsp;<span>0</span></a>
+                <a href="../html-warenkorb\warenkorb.html"><i class='fas fa-shopping-cart'></i>&nbsp;<span>0</span></a>
             </div>
         </div>
     </header>
+    <nav>
+        <div class="bottom-nav">
+            <ul>
+                <a href="../html-admin/admin.html"><li>Administrator</li></a>
+                <a href="../html-memes/memes.html"><li>Über uns</li></a>
+            </ul>
+        </div>
+    </nav>
     <main>
-        <div id="test"></div>
-        <div id="orderContainer"></div>
-        <div id="productContainer"></div>
-        <div id="buttonContainer"></div>
+        <div id="topContainer">
+            <span>Wohin wollen Sie das Eis?</span>
+            <div><span id="extraSpan">(Muss nur einmal pro Bestellvorgang ausgewählt werden)</span></div>
+            <div>
+                <span>Zum Tisch?</span>  
+                <div id="topTable"></div>              
+            </div>
+            <div>
+                <span>Zum Mitnehmen?</span>
+                <div id="topTake"></div>
+            </div>
+        </div>
+        <div id="productContainer">
+            <h1 id="containerHeader">Behälter (max 1)</h1>
+            <div id="containerDiv"></div>
+            <h1 id="flavourHeader">Eis Sorten (max 6)</h1>
+            <div id="flavourDiv"></div>
+            <h1 id="toppingHeader">Toppings (max 3)</h1>
+            <div id="toppingDiv"></div>
+        </div>
+        <div id="displayContainer">
+            <div id="behälter"></div>
+            <div id="eis1"></div>
+            <div id="eis2"></div>
+            <div id="eis3"></div>
+            <div id="eis4"></div>
+            <div id="eis5"></div>
+            <div id="eis6"></div>
+            <div id="topping1"></div>
+            <div id="topping2"></div>
+            <div id="topping3"></div>
+        </div>
+        <div id="buttonContainer">
+            <a href="#topContainer"><button id="resetButton">Eis zurücksetzen</button></a>
+            <a href="#topContainer"><button id="nextButton">Nächstes Eis</button></a>
+            <a href="../html-warenkorb/warenkorb.html"><button id="sendButton">Bestellung speichern</button></a>
+        </div>
     </main>
     <footer>
         <div>
-            <!--Disclaimer-->
+            <span>( - Disclaimer - )</span>
+            <span>Ich verdiene mit dieser Website kein Geld</span>
         </div>
     </footer>
 </body>

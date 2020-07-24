@@ -1,9 +1,145 @@
 @media screen and (min-width: 0px) {
-    @import url("html-index/index-01-phone.css");
+
+    /* Die Seite ist auf Mindestbreite von 333px ausgelegt */
+
+    body {
+        font-size: 20px;
+        margin: 0px;
+        height: 100%;
+        width: 100%;
+        /*background-image: url(images/sunrise-1014712_1920.jpg);
+        background-position: 50% 10%;
+        background-repeat: no-repeat;
+        background-size: cover;*/
+    }
+
+    main {
+        padding: 0px 10px;
+    }
+
+    .top-nav {
+        color: white;
+        background-color: black;
+        display: grid;
+        grid-template-columns: 70% 25%;
+        grid-column-gap: 5%;
+        text-align: center;
+        height: 10vh;
+    }
+    .top-nav a {
+        font-size: 40px;
+        text-decoration: none;
+        color: white;
+    }
+    .top-nav #warenkorb {
+        font-size: 30px;
+        position: relative;
+        right: 10px;
+    }   
+    .top-nav #logo, #warenkorb {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
+    .top-nav img {
+        height: 60px;
+        width: 220px;
+    }
+
+    .bottom-nav {
+        background-color: hsla(0, 0%, 0%, 0%);
+        text-align: center;
+    }
+    .bottom-nav ul {
+        list-style: none;
+        margin: 0px;
+        padding: 5px;
+    }
+    .bottom-nav ul li {
+        background-color: rgb(0, 102, 255);
+        margin: 10px 0px;
+        border: solid rgb(0, 25, 136) 2px;
+        
+        border-radius: 10px;
+    }
+    .bottom-nav ul a {
+        text-decoration: none;
+        color: white;
+    }
+
+    footer div {
+        margin-top: 200px;
+        background-color: rgb(43, 43, 43);
+        color: white;
+        text-align: center;
+        font-size: 1em;
+        height: 200px;
+        width: 100%;
+        position: relative;
+        bottom: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
 }
 @media screen and (min-width: 601px) {
-    @import url("html-index/index-02-tablet.css");
+    body {
+        font-size: 40px;
+    }
+
+    div.top-nav {
+        height: 120px;
+    }
+
+    .top-nav #warenkorb {
+        font-size: 70px;
+    }   
+    .top-nav img {
+        height: 100px;
+        width: 380px;
+    }
+
 }
 @media screen and (min-width: 1025px) {
-    @import url("html-index/index-03-desktop.css");
+    body {
+    font-size: 40px;
+    }
+
+    .top-nav #warenkorb a:hover {
+        color:rgb(0, 102, 255);
+    }   
+    div.top-nav {
+        height: 150px;
+    }
+    .top-nav img {
+        height: 120px;
+        width: 460px;
+    }
+
+    .bottom-nav {
+        background-color: rgb(0, 102, 255);
+    }
+    .bottom-nav ul {
+        font-size: 30px;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: 0px;
+        padding: 0px;
+    }
+    .bottom-nav ul li {
+        border: none;
+    }
+    .bottom-nav ul a {
+        text-decoration: none;
+        color: white;
+    }
+    .bottom-nav ul a:hover {
+        color: black;
+    }
 }
