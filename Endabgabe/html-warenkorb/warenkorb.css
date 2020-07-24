@@ -2,6 +2,7 @@
 
     body {
         background-image: url(../html-shop/images/background.png);
+        font-size: 20px;
     }
 
     #mainContainer {
@@ -76,6 +77,10 @@
 
 }
 @media screen and (min-width: 1025px) {
+    body {
+        font-size: 20px;
+    }
+    
     div.product button:hover {
         background-color: red;
     }
