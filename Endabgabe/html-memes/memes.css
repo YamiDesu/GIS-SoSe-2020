@@ -55,7 +55,10 @@
         width: 50%;
     }
     #imageBox img {
-        width: 50%;
+        width: 40%;
         max-height: 650px;
+    }
+    #buttonRight, #buttonLeft {
+        font-size: 20px;
     }
 }
