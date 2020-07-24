@@ -114,6 +114,7 @@ var frontShop;
     function clearCombination() {
         combinationArray = [];
         displayOrder();
+        document.querySelector("#topContainer").scrollIntoView(true);
     }
     function fixCartCount() {
         if (localStorage["CartCount"] != undefined)
@@ -130,6 +131,7 @@ var frontShop;
     function addToLocal() {
         combinationArray.push(tisch);
         localStorage.setItem(`Combination${combinationCount}`, "[" + combinationArray.toLocaleString() + "]");
+        window.location.href = "../html-warenkorb/warenkorb.html";
     }
     function displayOrder() {
         document.querySelector("#displayContainer").innerHTML = "";

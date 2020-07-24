@@ -12,7 +12,7 @@ function previousImage() {
 function changeImage(_vorzeichen) {
     for (const iterator of pictureNames) {
         let currentImage = document.querySelector("#imageBox img").getAttribute("src");
-        if (iterator == currentImage) {
+        if (("images/" + iterator) == currentImage) {
             if (pictureNames.indexOf(iterator) == pictureNames.length - 1 && _vorzeichen == +1)
                 document.querySelector("#imageBox img").setAttribute("src", `images/${pictureNames[0]}`);
             else if (pictureNames.indexOf(iterator) == 0 && _vorzeichen == -1)

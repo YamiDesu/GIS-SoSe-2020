@@ -131,6 +131,7 @@ namespace frontShop {
     function clearCombination(): void {
         combinationArray = [];
         displayOrder();
+        (<HTMLDivElement>document.querySelector("#topContainer")).scrollIntoView(true);
     }
 
     function fixCartCount(): void {
@@ -149,6 +150,7 @@ namespace frontShop {
     function addToLocal(): void {
         combinationArray.push(tisch);
         localStorage.setItem(`Combination${combinationCount}`, "[" + combinationArray.toLocaleString() + "]");
+        window.location.href = "../html-warenkorb/warenkorb.html";
     }
 
     function displayOrder(): void {
