@@ -49,7 +49,7 @@ var handleMongo;
     handleMongo.insertObject = insertObject;
     async function removeEntry(_collection, _entry) {
         connectCollection(_collection);
-        if (!(_entry.id == undefined)) {
+        if (_entry._id != undefined) {
             let id = _entry._id;
             let objID = new Mongo.ObjectID(id);
             await currentCollection.deleteOne({ "_id": objID });

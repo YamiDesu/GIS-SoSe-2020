@@ -1,7 +1,7 @@
 
 namespace frontShop {
 
-    let serverUrl: string = "https://theoneandgis.herokuapp.com";
+    let serverUrl: string = "http://localhost:8100";
     let combinationArray: string[] = [];
     let combinationCount: number = 0;
     let tisch: string = "";
@@ -28,12 +28,15 @@ namespace frontShop {
             button.setAttribute("content", `{"tisch":"${i}"}`);
             button.classList.add("product_button");
             button.innerHTML = `Tisch: ${i}`;
+
             (<HTMLDivElement>document.querySelector("#topTable")).append(button);
         }
+
         let button: HTMLButtonElement = document.createElement("button");
         button.setAttribute("id", "id_table_0");
         button.setAttribute("content", `{"tisch":"0"}`);
         button.innerHTML = "Zum Mitnehmen!";
+
         (<HTMLDivElement>document.querySelector("#topTake")).append(button);
     }
 
@@ -64,7 +67,7 @@ namespace frontShop {
 
         (<HTMLButtonElement>document.querySelector("#id_table_0")).addEventListener("click", addProduct);
         (<HTMLButtonElement>document.querySelector("#nextButton")).addEventListener("click", addCurrent);
-        (<HTMLButtonElement>document.querySelector("#sendButton")).addEventListener("click", addToLocal);
+        (<HTMLButtonElement>document.querySelector("#sendButton")).addEventListener("click", addOrderToLocal);
         (<HTMLButtonElement>document.querySelector("#resetButton")).addEventListener("click", clearCombination);
     } 
 
@@ -111,8 +114,10 @@ namespace frontShop {
         let countOccurence: number = 0;
         for (let i: number = 0; i < combinationArray.length; i++) {
             let checkString: string = combinationArray[i];
+            
             if (checkString.includes(<string>_targetString.category))
                 countOccurence++;   
+            
             if (countOccurence == _maximum) {
                 alert("Die maximale Anzahl von " + _maximum + " wurde bereits erreicht");
                 return true;
@@ -147,10 +152,14 @@ namespace frontShop {
         (<HTMLElement>document.querySelector("#warenkorb span")).innerHTML = `${localStorage.CartCount}`;
     }
 
+    function addOrderToLocal(): void {
+        addToLocal();
+        window.location.href = "../html-warenkorb/warenkorb.html";
+    }
+
     function addToLocal(): void {
         combinationArray.push(tisch);
         localStorage.setItem(`Combination${combinationCount}`, "[" + combinationArray.toLocaleString() + "]");
-        window.location.href = "../html-warenkorb/warenkorb.html";
     }
 
     function displayOrder(): void {

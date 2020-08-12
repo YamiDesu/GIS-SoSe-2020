@@ -53,7 +53,7 @@ export namespace handleMongo {
 
     export async function removeEntry(_collection: string, _entry: ProduktObj): Promise<void> {
         connectCollection(_collection);
-        if (!(_entry.id == undefined)) {
+        if (_entry._id != undefined) {
             let id: string = <string>_entry._id;
             let objID: Mongo.ObjectID = new Mongo.ObjectID(id);
             await currentCollection.deleteOne({ "_id": objID });

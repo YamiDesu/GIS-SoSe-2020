@@ -1,7 +1,7 @@
 "use strict";
 var frontShop;
 (function (frontShop) {
-    let serverUrl = "https://theoneandgis.herokuapp.com";
+    let serverUrl = "http://localhost:8100";
     let combinationArray = [];
     let combinationCount = 0;
     let tisch = "";
@@ -52,7 +52,7 @@ var frontShop;
             iterator.addEventListener("click", addProduct);
         document.querySelector("#id_table_0").addEventListener("click", addProduct);
         document.querySelector("#nextButton").addEventListener("click", addCurrent);
-        document.querySelector("#sendButton").addEventListener("click", addToLocal);
+        document.querySelector("#sendButton").addEventListener("click", addOrderToLocal);
         document.querySelector("#resetButton").addEventListener("click", clearCombination);
     }
     function addProduct(_event) {
@@ -128,10 +128,13 @@ var frontShop;
         localStorage.setItem("CartCount", `${count}`);
         document.querySelector("#warenkorb span").innerHTML = `${localStorage.CartCount}`;
     }
+    function addOrderToLocal() {
+        addToLocal();
+        window.location.href = "../html-warenkorb/warenkorb.html";
+    }
     function addToLocal() {
         combinationArray.push(tisch);
         localStorage.setItem(`Combination${combinationCount}`, "[" + combinationArray.toLocaleString() + "]");
-        window.location.href = "../html-warenkorb/warenkorb.html";
     }
     function displayOrder() {
         document.querySelector("#displayContainer").innerHTML = "";

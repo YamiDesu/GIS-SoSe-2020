@@ -1,7 +1,7 @@
 "use strict";
 var frontShop;
 (function (frontShop) {
-    let serverUrl = "https://theoneandgis.herokuapp.com";
+    let serverUrl = "http://localhost:8100";
     init();
     async function init() {
         await getOrderList();

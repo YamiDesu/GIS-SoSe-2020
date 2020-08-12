@@ -1,7 +1,7 @@
 "use strict";
 var frontShop;
 (function (frontShop) {
-    let serverUrl = "https://theoneandgis.herokuapp.com";
+    let serverUrl = "http://localhost:8100";
     let orderArray = [];
     let orderPrice = 0;
     let orderNumber = 0;
@@ -80,22 +80,23 @@ var frontShop;
         url = serverUrl + "/" + "mongo" + "/" + "orders" + "/" + "insertEntry" + "/" + "?" + query.toString() + `&Nr=${orderNumber}` + `&orderPrice=${orderPrice.toFixed(2)}`;
         await fetch(url);
         for (const iterator of orderArray) {
+            console.log("{" + `"area":"mongo","collection":"orders","action":"insertEntry",` + iterator.slice(1, iterator.length - 1));
             await fetch(serverUrl, {
                 method: "POST",
                 headers: {
                     "Content-Type": "text/plain"
                 },
-                body: iterator
+                body: "{" + `"area":"mongo","collection":"orders","action":"insertEntry",` + iterator.slice(1, iterator.length - 1) + "}"
             });
         }
         orderNumber++;
-        await fetch(serverUrl + "/mongo/orders/updateEntry" + "?_id=5f1a48d7a8f957baaa07cfeb&orderCount=" + orderNumber.toString());
+        await fetch(serverUrl + "/mongo/orders/updateEntry" + "?_id=5f34646911221b807b8df54c&orderCount=" + orderNumber.toString());
         localStorage.clear();
         location.reload();
         alert("Ihre Bestellung wurde eingereicht. Bitte melden Sie sich am Tresen, sobald Ihre Nummer aufgerufen wird! ♥");
     }
     async function getNumber() {
-        let response = await fetch(serverUrl + "/mongo/orders/findEntry?_id=5f1a48d7a8f957baaa07cfeb");
+        let response = await fetch(serverUrl + "/mongo/orders/findEntry?_id=5f34646911221b807b8df54c");
         let orderObj = await response.json();
         let orderObjNumber = parseFloat(orderObj.orderCount);
         return orderObjNumber;
