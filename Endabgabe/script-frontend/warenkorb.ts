@@ -102,7 +102,7 @@ namespace frontShop {
         }
 
         orderNumber++;
-        await fetch(serverUrl + "/mongo/orders/updateEntry" + "?_id=5f34646911221b807b8df54c&orderCount=" + orderNumber.toString());
+        await fetch(serverUrl + "/mongo/orders/updateEntry" + "?_id=5f34701a11221b807b8df54d&orderCount=" + orderNumber.toString());
 
         localStorage.clear();
         location.reload();
@@ -110,7 +110,7 @@ namespace frontShop {
     }
 
     async function getNumber(): Promise<number> {
-        let response: Response = await fetch(serverUrl + "/mongo/orders/findEntry?_id=5f34646911221b807b8df54c");
+        let response: Response = await fetch(serverUrl + "/mongo/orders/findEntry?_id=5f34701a11221b807b8df54d");
         let orderObj: Products = await response.json();
         let orderObjNumber: number = parseFloat(<string>orderObj.orderCount);
         return orderObjNumber; 

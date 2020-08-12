@@ -90,13 +90,13 @@ var frontShop;
             });
         }
         orderNumber++;
-        await fetch(serverUrl + "/mongo/orders/updateEntry" + "?_id=5f34646911221b807b8df54c&orderCount=" + orderNumber.toString());
+        await fetch(serverUrl + "/mongo/orders/updateEntry" + "?_id=5f34701a11221b807b8df54d&orderCount=" + orderNumber.toString());
         localStorage.clear();
         location.reload();
         alert("Ihre Bestellung wurde eingereicht. Bitte melden Sie sich am Tresen, sobald Ihre Nummer aufgerufen wird! ♥");
     }
     async function getNumber() {
-        let response = await fetch(serverUrl + "/mongo/orders/findEntry?_id=5f34646911221b807b8df54c");
+        let response = await fetch(serverUrl + "/mongo/orders/findEntry?_id=5f34701a11221b807b8df54d");
         let orderObj = await response.json();
         let orderObjNumber = parseFloat(orderObj.orderCount);
         return orderObjNumber;
