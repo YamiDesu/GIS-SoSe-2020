@@ -1,7 +1,7 @@
 "use strict";
 var frontShop;
 (function (frontShop) {
-    let serverUrl = "http://localhost:8100";
+    let serverUrl = "https://theoneandgis.herokuapp.com";
     let orderArray = [];
     let orderPrice = 0;
     let orderNumber = 0;

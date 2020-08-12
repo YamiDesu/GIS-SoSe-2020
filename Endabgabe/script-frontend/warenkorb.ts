@@ -1,7 +1,7 @@
 
 namespace frontShop {
 
-    let serverUrl: string = "http://localhost:8100";
+    let serverUrl: string = "https://theoneandgis.herokuapp.com";
     let orderArray: string[] = [];
     let orderPrice: number = 0;
     let orderNumber: number = 0; 

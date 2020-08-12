@@ -5,7 +5,7 @@ namespace frontShop {
         [type: string]: string | number;
     }
 
-    let serverUrl: string = "http://localhost:8100";
+    let serverUrl: string = "https://theoneandgis.herokuapp.com";
 
     init();
 

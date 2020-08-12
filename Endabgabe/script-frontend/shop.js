@@ -1,7 +1,7 @@
 "use strict";
 var frontShop;
 (function (frontShop) {
-    let serverUrl = "http://localhost:8100";
+    let serverUrl = "https://theoneandgis.herokuapp.com";
     let combinationArray = [];
     let combinationCount = 0;
     let tisch = "";
