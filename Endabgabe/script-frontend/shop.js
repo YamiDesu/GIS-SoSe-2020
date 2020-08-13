@@ -134,6 +134,7 @@ var frontShop;
     }
     function addToLocal() {
         combinationArray.push(tisch);
+        console.log(combinationArray.toLocaleString());
         localStorage.setItem(`Combination${combinationCount}`, "[" + combinationArray.toLocaleString() + "]");
     }
     function displayOrder() {

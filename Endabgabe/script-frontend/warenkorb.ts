@@ -23,7 +23,8 @@ namespace frontShop {
         orderNumber = await getNumber();
         for (const key in localStorage) {
             if (localStorage.getItem(key) != null && key.includes("Combination")) {
-                let content: string = localStorage.getItem(key)!;
+                let content: string = localStorage.getItem(key)!;            
+                console.log(content);
                 let contentObj: Products[] = await JSON.parse(content);
                 let contentString: string = "{";
                 let countFlavour: number = 1;
@@ -97,7 +98,8 @@ namespace frontShop {
                 headers: {
                     "Content-Type": "text/plain"
                 },
-                body: "{" + `"area":"mongo","collection":"orders","action":"insertEntry",` + iterator.slice(1, iterator.length - 1) + "}"
+                body: "{" + iterator.slice(1, iterator.length - 1) + "}"
+                //body: "{" + `"area":"mongo","collection":"orders","action":"insertEntry",` + iterator.slice(1, iterator.length - 1) + "}"
             });
         }
 

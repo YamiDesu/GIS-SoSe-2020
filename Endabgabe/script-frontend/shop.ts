@@ -159,6 +159,7 @@ namespace frontShop {
 
     function addToLocal(): void {
         combinationArray.push(tisch);
+        console.log(combinationArray.toLocaleString());
         localStorage.setItem(`Combination${combinationCount}`, "[" + combinationArray.toLocaleString() + "]");
     }
 

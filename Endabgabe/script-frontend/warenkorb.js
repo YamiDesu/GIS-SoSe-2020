@@ -17,6 +17,7 @@ var frontShop;
         for (const key in localStorage) {
             if (localStorage.getItem(key) != null && key.includes("Combination")) {
                 let content = localStorage.getItem(key);
+                console.log(content);
                 let contentObj = await JSON.parse(content);
                 let contentString = "{";
                 let countFlavour = 1;
@@ -86,7 +87,8 @@ var frontShop;
                 headers: {
                     "Content-Type": "text/plain"
                 },
-                body: "{" + `"area":"mongo","collection":"orders","action":"insertEntry",` + iterator.slice(1, iterator.length - 1) + "}"
+                body: "{" + iterator.slice(1, iterator.length - 1) + "}"
+                //body: "{" + `"area":"mongo","collection":"orders","action":"insertEntry",` + iterator.slice(1, iterator.length - 1) + "}"
             });
         }
         orderNumber++;
